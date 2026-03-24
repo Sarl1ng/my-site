@@ -1,0 +1,53 @@
+---
+// src/components/LeadForm.astro
+const {
+  buttonText = "Вызвать мастера",
+  placeholder = "Введите ваш телефон",
+  className = ""
+} = Astro.props;
+---
+
+<form class={`leadform ${className}`} action="#" method="post">
+  <input
+    class="leadform__input"
+    type="tel"
+    name="phone"
+    placeholder={placeholder}
+    autocomplete="tel"
+    inputmode="tel"
+    required
+  />
+  <button class="leadform__btn" type="submit">{buttonText}</button>
+</form>
+
+<style>
+  .leadform{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  @media (min-width: 700px){
+    .leadform{
+      grid-template-columns: 1fr 220px;
+      gap: 12px;
+    }
+  }
+  .leadform__input{
+    height: 52px;
+    border: 0;
+    border-radius: 4px;
+    padding: 0 16px;
+    font-size: 16px;
+    outline: none;
+  }
+  .leadform__btn{
+    height: 52px;
+    border: 0;
+    border-radius: 4px;
+    background: #ff3b30;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
