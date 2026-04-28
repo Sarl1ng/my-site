@@ -8,28 +8,28 @@ import Container from "../ui/Container.astro";
   <div class="hero__media" style={`background-image: url(${site.heroImage});`} aria-hidden="true"></div>
   <Container class="hero__inner">
     <div class="hero__content">
-      <p class="hero__eyebrow">Аварийный вызов мастера</p>
+      <p class="hero__eyebrow">Перезвоним в течение 5 минут</p>
       <h1>Заказ прочистки канализации в Новороссийске</h1>
       <p class="hero__lead">
         Прочистка канализации, устранение засоров и сантехнические работы по заявке в Новороссийске и области.
       </p>
-      <div class="hero__actions">
-        <Button href={site.phoneHref}>Вызвать мастера</Button>
-        <a href={site.phoneHref} class="hero__phone">{site.phone}</a>
-      </div>
       <form class="inline-form" action="#" method="post">
         <label class="sr-only" for="hero-phone">Телефон</label>
         <input id="hero-phone" name="phone" type="tel" placeholder="Введите ваш телефон" autocomplete="tel" />
-        <button type="submit">Перезвоните мне</button>
+        <button type="submit">Вызвать мастера</button>
       </form>
+      <div class="hero__actions">
+        <Button href={site.phoneHref} variant="light">Позвонить {site.phone}</Button>
+        <a href="#popular-services" class="hero__phone">Посмотреть услуги</a>
+      </div>
       <p class="form-note">TODO: подключить обработчик формы и текст согласия.</p>
     </div>
     <aside class="hero__card" aria-label="Преимущества вызова">
       <ul>
-        <li><span>🚚</span> Выезд мастера по заявке</li>
-        <li><span>⏱</span> Быстрая связь после обращения</li>
-        <li><span>🛠</span> Прочистка и сантехнические работы</li>
-        <li><span>📍</span> Новороссийск и Краснодарский край</li>
+        <li><span>🚚</span> Бесплатный выезд</li>
+        <li><span>⏱</span> Приезд в течение часа</li>
+        <li><span>🛡</span> Гарантия: TODO подтвердить</li>
+        <li><span>🧰</span> Мастера в специальной форме</li>
       </ul>
     </aside>
   </Container>

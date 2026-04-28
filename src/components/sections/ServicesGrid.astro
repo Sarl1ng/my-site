@@ -1,27 +1,28 @@
 ---
-import { popularServiceSlugs, services, getServiceBySlug } from "../../data/services";
+import { services } from "../../data/services";
+import { priceCategories } from "../../data/prices";
 import Button from "../ui/Button.astro";
 import Container from "../ui/Container.astro";
 import SectionTitle from "../ui/SectionTitle.astro";
 
-const popular = popularServiceSlugs.map((slug) => getServiceBySlug(slug)).filter(Boolean);
+const popular = priceCategories[0].items;
 ---
 
-<section class="section">
+<section class="section" id="popular-services">
   <Container>
-    <SectionTitle title="Популярные услуги прочистки" description="Коммерческая структура сохранена по старому сайту: сначала самые востребованные услуги, затем общий каталог." />
+    <SectionTitle title="Популярные услуги прочистки" />
     <div class="cards cards--popular">
-      {popular.map((service) => service && (
-        <article class="service-card">
-          <div class="service-card__icon" aria-hidden="true">{service.icon}</div>
-          <h3><a href={`/${service.slug}/`}>{service.title}</a></h3>
-          <p>{service.shortDescription}</p>
-          <Button href={`/${service.slug}/`} variant="outline">Подробнее</Button>
+      {popular.map((item) => (
+        <article class="service-card service-card--photo">
+          {item.image && <img src={item.image} alt={item.alt ?? item.title} loading="lazy" width="300" height="200" />}
+          <h3>{item.href ? <a href={item.href}>{item.title}</a> : item.title}</h3>
+          <p>{item.price}</p>
+          <Button href={item.href ?? "#lead-form"} variant="primary">Оставить заявку</Button>
         </article>
       ))}
     </div>
 
-    <SectionTitle title="Услуги прочистки, сантехники и замены труб" />
+    <SectionTitle title="Услуги прочистки" />
     <div class="service-list">
       {services.map((service) => (
         <a href={`/${service.slug}/`} class="service-list__item">
