@@ -4,6 +4,8 @@ export const site = {
   baseUrl: "https://prochistkatrub23.ru",
   description:
     "Прочистка канализации, устранение засоров и сантехнические работы в Новороссийске и Краснодарском крае.",
+  tagline:
+    "Сантехнические работы и услуги по прочистке канализации любой сложности в Краснодарском крае",
   phone: "+7 (904) 288-11-88",
   phoneHref: "tel:+79042881188",
   whatsappUrl: "https://wa.me/79385381577",
@@ -12,12 +14,12 @@ export const site = {
   region: "Новороссийск и Краснодарский край",
   city: "Новороссийск",
   address: "г. Новороссийск, ул. Советов, 42",
-  workingHours: "Круглосуточно, без обеда и выходных",
+  workingHours: "Работаем 24/7 в выходные и праздники",
   logo: {
-    src: "/assets/img/logo.png",
+    src: "/images/logo-pro-service.svg",
     alt: "PRO Сервис",
   },
-  heroImage: "/assets/img/hero.webp",
+  heroImage: "/images/home/hero-santekhnika.webp",
   todos: [
     "Подтвердить юридическое название и реквизиты.",
     "Подтвердить адрес, рабочую зону, гарантийные условия и точные цены.",
