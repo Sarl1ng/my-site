@@ -1,0 +1,38 @@
+---
+import { nav } from "../../data/nav";
+import { site } from "../../data/site";
+import { serviceGroups } from "../../data/services";
+import Container from "../ui/Container.astro";
+---
+
+<footer class="site-footer">
+  <Container class="site-footer__grid">
+    <div>
+      <a class="site-footer__brand" href="/">{site.name}</a>
+      <p>{site.description}</p>
+      <p class="site-footer__muted">Данные о реквизитах и юридическом лице: TODO.</p>
+    </div>
+    {serviceGroups.map((group) => (
+      <div>
+        <h2>{group.title}</h2>
+        {group.services.slice(0, 5).map((service) => (
+          <a href={`/${service.slug}/`}>{service.title}</a>
+        ))}
+      </div>
+    ))}
+    <div>
+      <h2>Контакты</h2>
+      <a href={site.phoneHref}>{site.phone}</a>
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+      <span>{site.address}</span>
+      <span>{site.workingHours}</span>
+    </div>
+  </Container>
+  <Container class="site-footer__bottom">
+    <span>Copyright © {new Date().getFullYear()}. Все права защищены.</span>
+    <nav aria-label="Дополнительные ссылки">
+      <a href="/politika-konfidenczialnosti/">Политика конфиденциальности</a>
+      {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+  </Container>
+</footer>

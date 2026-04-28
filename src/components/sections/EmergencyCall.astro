@@ -1,0 +1,19 @@
+---
+import { site } from "../../data/site";
+import Button from "../ui/Button.astro";
+import Container from "../ui/Container.astro";
+---
+
+<section class="emergency">
+  <Container class="emergency__inner">
+    <div>
+      <p class="eyebrow">Срочный вызов</p>
+      <h2>Оставьте заявку, и мы устраним неисправность уже сегодня</h2>
+      <p>Секция подготовлена по визуальному паттерну старого сайта: темный CTA-блок с телефоном и короткой формой.</p>
+    </div>
+    <div class="emergency__actions">
+      <Button href={site.phoneHref}>Позвонить {site.phone}</Button>
+      <a href={site.whatsappUrl} target="_blank" rel="noreferrer">WhatsApp</a>
+    </div>
+  </Container>
+</section>

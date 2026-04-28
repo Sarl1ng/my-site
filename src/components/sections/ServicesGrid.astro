@@ -1,0 +1,34 @@
+---
+import { popularServiceSlugs, services, getServiceBySlug } from "../../data/services";
+import Button from "../ui/Button.astro";
+import Container from "../ui/Container.astro";
+import SectionTitle from "../ui/SectionTitle.astro";
+
+const popular = popularServiceSlugs.map((slug) => getServiceBySlug(slug)).filter(Boolean);
+---
+
+<section class="section">
+  <Container>
+    <SectionTitle title="Популярные услуги прочистки" description="Коммерческая структура сохранена по старому сайту: сначала самые востребованные услуги, затем общий каталог." />
+    <div class="cards cards--popular">
+      {popular.map((service) => service && (
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">{service.icon}</div>
+          <h3><a href={`/${service.slug}/`}>{service.title}</a></h3>
+          <p>{service.shortDescription}</p>
+          <Button href={`/${service.slug}/`} variant="outline">Подробнее</Button>
+        </article>
+      ))}
+    </div>
+
+    <SectionTitle title="Услуги прочистки, сантехники и замены труб" />
+    <div class="service-list">
+      {services.map((service) => (
+        <a href={`/${service.slug}/`} class="service-list__item">
+          <span>{service.icon}</span>
+          <strong>{service.title}</strong>
+        </a>
+      ))}
+    </div>
+  </Container>
+</section>

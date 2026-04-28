@@ -1,0 +1,33 @@
+---
+import { site } from "../../data/site";
+import Button from "../ui/Button.astro";
+import Container from "../ui/Container.astro";
+import SectionTitle from "../ui/SectionTitle.astro";
+---
+
+<section class="section contacts-preview">
+  <Container>
+    <SectionTitle title="Контакты" description="Контактные данные взяты из старого сайта и требуют подтверждения владельцем перед финальной публикацией." />
+    <div class="contacts-preview__grid">
+      <article>
+        <h3>Телефон</h3>
+        <a href={site.phoneHref}>{site.phone}</a>
+      </article>
+      <article>
+        <h3>Почта</h3>
+        <a href={`mailto:${site.email}`}>{site.email}</a>
+      </article>
+      <article>
+        <h3>Адрес</h3>
+        <p>{site.address}</p>
+      </article>
+      <article>
+        <h3>Режим работы</h3>
+        <p>{site.workingHours}</p>
+      </article>
+    </div>
+    <div class="section-action">
+      <Button href="/kontakty/" variant="outline">Все контакты</Button>
+    </div>
+  </Container>
+</section>

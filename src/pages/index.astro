@@ -1,8 +1,30 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/Hero.astro";
+import Hero from "../components/sections/Hero.astro";
+import ServicesGrid from "../components/sections/ServicesGrid.astro";
+import Advantages from "../components/sections/Advantages.astro";
+import HowWeWork from "../components/sections/HowWeWork.astro";
+import PricesPreview from "../components/sections/PricesPreview.astro";
+import EmergencyCall from "../components/sections/EmergencyCall.astro";
+import LeadForm from "../components/sections/LeadForm.astro";
+import Faq from "../components/sections/Faq.astro";
+import ContactsPreview from "../components/sections/ContactsPreview.astro";
+import SeoTextBlock from "../components/sections/SeoTextBlock.astro";
 ---
 
-<BaseLayout title="My Service — главный оффер" description="Одна фраза про пользу для клиента.">
+<BaseLayout
+  title="Прочистка канализации в Новороссийске | PRO Сервис"
+  description="Заказ прочистки канализации, устранение засоров, сантехнические работы и замена труб в Новороссийске и Краснодарском крае."
+  canonical="/"
+>
   <Hero />
+  <Advantages />
+  <ServicesGrid />
+  <HowWeWork />
+  <PricesPreview />
+  <EmergencyCall />
+  <LeadForm />
+  <Faq />
+  <ContactsPreview />
+  <SeoTextBlock />
 </BaseLayout>

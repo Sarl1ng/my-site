@@ -1,0 +1,19 @@
+---
+import { commonFaq } from "../../data/faq";
+import Container from "../ui/Container.astro";
+import SectionTitle from "../ui/SectionTitle.astro";
+---
+
+<section class="section section--white">
+  <Container>
+    <SectionTitle title="Часто задаваемые вопросы" />
+    <div class="faq">
+      {commonFaq.map((item) => (
+        <details>
+          <summary>{item.question}</summary>
+          <p>{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </Container>
+</section>

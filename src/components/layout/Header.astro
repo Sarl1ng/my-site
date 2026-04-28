@@ -1,0 +1,81 @@
+---
+import { nav, type NavItem } from "../../data/nav";
+import { site } from "../../data/site";
+import Container from "../ui/Container.astro";
+import Button from "../ui/Button.astro";
+
+type Props = {
+  activePath?: string;
+};
+
+const { activePath = "" } = Astro.props;
+
+function isActive(item: NavItem) {
+  if (item.href === "/" && activePath === "/") return true;
+  if (item.href !== "/" && activePath.startsWith(item.href)) return true;
+  return item.children?.some((child) => isActive(child)) ?? false;
+}
+---
+
+<header class="site-header">
+  <div class="site-header__top">
+    <Container class="site-header__top-inner">
+      <a class="site-header__logo" href="/" aria-label="На главную">
+        <img src={site.logo.src} alt={site.logo.alt} width="150" height="95" loading="eager" />
+      </a>
+      <p class="site-header__tagline">
+        Сантехнические работы и услуги по прочистке канализации любой сложности
+      </p>
+      <div class="site-header__contacts">
+        <Button href={site.phoneHref} variant="outline">Позвоните нам</Button>
+        <div class="site-header__phone">
+          <a href={site.phoneHref}>{site.phone}</a>
+          <span>{site.workingHours}</span>
+        </div>
+      </div>
+    </Container>
+  </div>
+
+  <div class="site-header__nav">
+    <Container>
+      <nav class="desktop-nav" aria-label="Главное меню">
+        {nav.map((item) => (
+          <div class="desktop-nav__item">
+            <a class:list={["desktop-nav__link", { "is-active": isActive(item) }]} href={item.href}>
+              {item.label}
+            </a>
+            {item.children && (
+              <div class="desktop-nav__dropdown">
+                {item.children.map((group) => (
+                  <div>
+                    <a class="desktop-nav__group" href={group.href}>{group.label}</a>
+                    {group.children?.map((child) => (
+                      <a href={child.href}>{child.label}</a>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </nav>
+
+      <details class="mobile-nav">
+        <summary>Меню</summary>
+        <nav aria-label="Мобильное меню">
+          {nav.map((item) => (
+            <details open={isActive(item)}>
+              <summary><a href={item.href}>{item.label}</a></summary>
+              {item.children?.map((group) => (
+                <div class="mobile-nav__group">
+                  <a href={group.href}>{group.label}</a>
+                  {group.children?.map((child) => <a href={child.href}>{child.label}</a>)}
+                </div>
+              ))}
+            </details>
+          ))}
+        </nav>
+      </details>
+    </Container>
+  </div>
+</header>

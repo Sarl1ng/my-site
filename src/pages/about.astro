@@ -2,9 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="О нас" description="Кто вы и почему вам можно доверять.">
-  <h1 class="text-3xl font-semibold tracking-tight">О нас</h1>
-  <p class="text-zinc-700 pt-3 max-w-2xl">
-    История, принципы, команда, кейсы — перенесём из WP.
-  </p>
+<BaseLayout
+  title="О нас | PRO Сервис"
+  description="Legacy-страница /about сохранена для навигации и указывает на основной SEO URL /o-nas/."
+  canonical="/o-nas/"
+  noindex={true}
+>
+  <section class="legacy-redirect">
+    <h1>О нас</h1>
+    <p>Эта legacy-страница сохранена временно. Основной SEO URL: <a href="/o-nas/">/o-nas/</a>.</p>
+  </section>
 </BaseLayout>
