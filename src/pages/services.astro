@@ -1,10 +1,27 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/ui/Container.astro";
+import { serviceGroups } from "../data/services";
 ---
 
-<BaseLayout title="Услуги" description="Что именно ты предлагаешь и какой результат получает клиент.">
-  <h1 class="text-3xl font-semibold tracking-tight">Услуги</h1>
-  <p class="text-zinc-700 pt-3 max-w-2xl">
-    Здесь позже перенесём блоки из WordPress/Elementor в нормальные секции.
-  </p>
+<BaseLayout
+  title="Услуги | PRO Сервис"
+  description="Legacy-страница /services сохранена как каталог ссылок на русские SEO URL услуг."
+  canonical="/prochistka-kanalizaczii/"
+  noindex={true}
+>
+  <Container class="page-head">
+    <h1>Услуги</h1>
+    <p>Legacy URL сохранен временно. Основные страницы услуг доступны по русским SEO-slug URL.</p>
+  </Container>
+  <section class="section section--white">
+    <Container class="content-grid">
+      {serviceGroups.map((group) => (
+        <article class="content-card">
+          <h2>{group.title}</h2>
+          {group.services.map((service) => <a href={`/${service.slug}/`}>{service.title}</a>)}
+        </article>
+      ))}
+    </Container>
+  </section>
 </BaseLayout>

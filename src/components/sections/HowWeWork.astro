@@ -1,0 +1,26 @@
+---
+import Container from "../ui/Container.astro";
+import SectionTitle from "../ui/SectionTitle.astro";
+
+const steps = [
+  ["Заявка", "Оставьте заявку на сайте или позвоните по номеру телефона."],
+  ["Выезд мастера", "Мастер приезжает на объект и осматривает проблему."],
+  ["Согласование работ", "До начала работ согласуются объем и стоимость."],
+  ["Завершение и прием", "После выполнения работ клиент принимает результат."],
+];
+---
+
+<section class="section">
+  <Container>
+    <SectionTitle title="Как проходит наша работа в Краснодарском крае" />
+    <div class="steps">
+      {steps.map(([title, text], index) => (
+        <article>
+          <span>{index + 1}</span>
+          <h3>{title}</h3>
+          <p>{text}</p>
+        </article>
+      ))}
+    </div>
+  </Container>
+</section>

@@ -8,24 +8,25 @@ export const nav: NavItem[] = [
   { label: "О нас", href: "/o-nas/" },
   {
     label: "Услуги",
-    href: "/uslugi/",
+    href: "/prochistka-kanalizaczii/",
     children: [
       {
-        label: "Устранение засоров",
+        label: "Прочистка",
         href: "/ustranenie-zasorov/",
         children: [
           { label: "Прочистка канализации", href: "/prochistka-kanalizaczii/" },
-          { label: "Гидродинамическая прочистка канализации в Краснодарском крае", href: "/gidrodinamicheskaya-ochistka-kanalizaczii/" },
-          { label: "Механическая прочистка канализации", href: "/mehanicheskaya-prochistka-kanalizaczii/" },
-          { label: "Прочистка ливневой канализации", href: "/prochistka-livnevoj-kanalizaczii/" },
-          { label: "Электромеханическая прочистка канализации", href: "/elektromehanicheskaya-prochistka-kanalizaczii/" },
+          { label: "Гидродинамическая очистка", href: "/gidrodinamicheskaya-ochistka-kanalizaczii/" },
+          { label: "Механическая прочистка", href: "/mehanicheskaya-prochistka-kanalizaczii/" },
+          { label: "Ливневая канализация", href: "/prochistka-livnevoj-kanalizaczii/" },
+          { label: "Электромеханическая прочистка", href: "/elektromehanicheskaya-prochistka-kanalizaczii/" },
           { label: "Прочистка унитаза", href: "/prochistka-unitaza/" },
         ],
       },
       {
-        label: "Установка сантехники",
+        label: "Сантехника",
         href: "/ustanovka-santehniki/",
         children: [
+          { label: "Установка сантехники", href: "/ustanovka-santehniki/" },
           { label: "Установка раковины", href: "/ustanovka-rakoviny/" },
           { label: "Установка смесителя", href: "/ustanovka-smesitelya/" },
           { label: "Установка ванны", href: "/ustanovka-vanny/" },
@@ -36,11 +37,12 @@ export const nav: NavItem[] = [
         ],
       },
       {
-        label: "Замена труб",
+        label: "Трубы",
         href: "/zamena-trub/",
         children: [
+          { label: "Замена труб", href: "/zamena-trub/" },
           { label: "Замена канализационных труб", href: "/zamena-kanalizaczionnyh-trub/" },
-          { label: "Замена водяных труб ХВС ГВС", href: "/zamena-vodyanyh-trub-hvs-gvs/" },
+          { label: "Замена водяных труб ХВС/ГВС", href: "/zamena-vodyanyh-trub-hvs-gvs/" },
           { label: "Замена стояков", href: "/zamena-stoyakov/" },
           { label: "Замена радиаторов", href: "/zamena-radiatorov/" },
           { label: "Замена труб отопления", href: "/zamena-trub-otopleniya/" },
@@ -49,4 +51,5 @@ export const nav: NavItem[] = [
     ],
   },
   { label: "Цены", href: "/czeny/" },
+  { label: "Контакты", href: "/kontakty/" },
 ];

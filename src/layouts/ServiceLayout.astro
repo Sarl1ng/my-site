@@ -1,0 +1,87 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Breadcrumbs from "../components/ui/Breadcrumbs.astro";
+import Button from "../components/ui/Button.astro";
+import Container from "../components/ui/Container.astro";
+import Faq from "../components/sections/Faq.astro";
+import LeadForm from "../components/sections/LeadForm.astro";
+import SeoTextBlock from "../components/sections/SeoTextBlock.astro";
+import { site } from "../data/site";
+import { getRelatedServices, type Service } from "../data/services";
+
+type Props = {
+  service: Service;
+};
+
+const { service } = Astro.props;
+const related = getRelatedServices(service);
+---
+
+<BaseLayout title={service.metaTitle} description={service.metaDescription} canonical={`/${service.slug}/`} ogType="article">
+  <Container class="service-hero">
+    <Breadcrumbs items={[{ label: "Услуги", href: "/prochistka-kanalizaczii/" }, { label: service.title }]} />
+    <div class="service-hero__grid">
+      <div>
+        <p class="eyebrow">{service.category}</p>
+        <h1>{service.h1}</h1>
+        <p>{service.shortDescription}</p>
+        <div class="hero__actions">
+          <Button href={site.phoneHref}>Вызвать мастера</Button>
+          <Button href="/czeny/" variant="outline">Посмотреть цены</Button>
+        </div>
+      </div>
+      <aside>
+        <h2>Что входит в первый этап</h2>
+        <ul>
+          {service.advantages.map((item) => <li>{item}</li>)}
+        </ul>
+      </aside>
+    </div>
+  </Container>
+
+  <section class="section section--white">
+    <Container class="content-grid">
+      <article class="content-card">
+        <h2>Описание услуги</h2>
+        {service.fullDescription.map((paragraph) => <p>{paragraph}</p>)}
+      </article>
+      <aside class="content-card cta-card">
+        <h2>Нужен мастер?</h2>
+        <p>Позвоните или оставьте заявку. Телефон виден на всех ключевых экранах сайта.</p>
+        <Button href={site.phoneHref}>Позвонить {site.phone}</Button>
+      </aside>
+    </Container>
+  </section>
+
+  <LeadForm />
+
+  <section class="section section--white">
+    <Container>
+      <h2>Вопросы по услуге</h2>
+      <div class="faq">
+        {service.faq.map((item) => (
+          <details>
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <section class="section">
+    <Container>
+      <h2>Связанные услуги</h2>
+      <div class="service-list">
+        {related.map((item) => (
+          <a href={`/${item.slug}/`} class="service-list__item">
+            <span>{item.icon}</span>
+            <strong>{item.title}</strong>
+          </a>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <SeoTextBlock />
+</BaseLayout>

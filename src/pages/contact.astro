@@ -2,9 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Контакты" description="Как связаться и оставить заявку.">
-  <h1 class="text-3xl font-semibold tracking-tight">Контакты</h1>
-  <p class="text-zinc-700 pt-3 max-w-2xl">
-    Здесь будет форма (позже подключим отправку в Telegram на хостинге).
-  </p>
+<BaseLayout
+  title="Контакты | PRO Сервис"
+  description="Legacy-страница /contact сохранена для навигации и указывает на основной SEO URL /kontakty/."
+  canonical="/kontakty/"
+  noindex={true}
+>
+  <section class="legacy-redirect">
+    <h1>Контакты</h1>
+    <p>Эта legacy-страница сохранена временно. Основной SEO URL: <a href="/kontakty/">/kontakty/</a>.</p>
+  </section>
 </BaseLayout>
