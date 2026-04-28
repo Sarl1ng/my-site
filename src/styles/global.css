@@ -135,17 +135,18 @@ h3 {
 
 .site-header__top-inner {
   display: grid;
-  grid-template-columns: 15% 30% 15% 35%;
+  grid-template-columns: 171px 342px 171px 399px;
   align-items: center;
   justify-content: center;
   gap: 0;
+  min-height: 145px;
   padding: 0;
   background: #fff;
 }
 
 .site-header__logo img {
   width: 100%;
-  max-width: 165px;
+  max-width: none;
   height: auto;
 }
 
@@ -153,9 +154,9 @@ h3 {
   margin: 0;
   color: #000;
   font-family: Montserrat, sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 1.55;
+  line-height: 1.4;
   text-align: center;
 }
 
@@ -165,7 +166,7 @@ h3 {
   justify-content: center;
   justify-self: center;
   min-height: 72px;
-  width: min(100%, 190px);
+  width: 190px;
   border: 2px solid var(--brand-orange);
   border-radius: 15px;
   background: #fff;
@@ -238,10 +239,14 @@ h3 {
   background: var(--brand-blue);
 }
 
+.site-header__nav .container {
+  width: 100%;
+}
+
 .desktop-nav {
   display: flex;
   justify-content: center;
-  min-height: 57px;
+  min-height: 56px;
 }
 
 .desktop-nav__item {
@@ -251,8 +256,10 @@ h3 {
 .desktop-nav__link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
-  min-height: 57px;
+  min-width: 230px;
+  min-height: 56px;
   padding: 15px 50px;
   color: #000;
   fill: #000;
@@ -267,6 +274,14 @@ h3 {
   background: var(--brand-orange);
   color: #fff;
   fill: #61ce70;
+}
+
+.desktop-nav__item:first-child .desktop-nav__link {
+  min-width: 132px;
+}
+
+.desktop-nav__item:last-child .desktop-nav__link {
+  min-width: 222px;
 }
 
 .desktop-nav__caret {
@@ -394,10 +409,10 @@ h3 {
   background: #fff;
   color: #555;
   font-family: Montserrat, sans-serif;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1;
-  padding: 8px 0;
+  padding: 18px 0;
 }
 
 .hero {
@@ -1025,6 +1040,7 @@ h3 {
   .site-header__top-inner {
     grid-template-columns: 40% 50%;
     justify-content: space-between;
+    min-height: 0;
   }
 
   .site-header__logo img {
