@@ -265,41 +265,44 @@ h3 {
   padding-left: 1rem;
 }
 
+.hero-breadcrumb {
+  background: #fff;
+  color: #555;
+  font-family: Montserrat, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 8px 0;
+}
+
 .hero {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  min-height: 415px;
   color: #fff;
-}
-
-.hero__media {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background-position: center;
+  background-position: center center;
   background-size: cover;
 }
 
-.hero::after {
+.hero::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background:
-    linear-gradient(90deg, rgba(10, 18, 31, 0.88), rgba(10, 18, 31, 0.54)),
-    radial-gradient(circle at 80% 20%, rgba(105, 191, 221, 0.35), transparent 28rem);
+  background-color: #000;
+  opacity: 0.65;
 }
 
 .hero__inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.72fr);
-  gap: 2rem;
+  grid-template-columns: 60% 40%;
+  gap: 0;
   align-items: center;
-  min-height: 380px;
-  padding: 3.2rem 0;
+  min-height: 415px;
+  padding: 0;
 }
 
-.hero__eyebrow,
 .eyebrow {
   margin-bottom: 0.6rem;
   color: var(--brand-orange);
@@ -308,11 +311,32 @@ h3 {
   text-transform: uppercase;
 }
 
-.hero__lead {
-  max-width: 680px;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: clamp(1rem, 1.8vw, 1.18rem);
-  font-weight: 700;
+.hero__content {
+  display: flex;
+  min-height: 415px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero__content h1 {
+  max-width: 620px;
+  margin: 0 0 18px;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.hero__content h3 {
+  margin: 0 0 16px;
+  color: #f83c0f;
+  font-family: Montserrat, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.25;
 }
 
 .hero__actions,
@@ -343,17 +367,20 @@ h3 {
 }
 
 .hero__card {
-  padding: 1rem;
-  border-color: rgba(255, 255, 255, 0.65);
-  border-radius: 8px;
-  background: rgba(20, 20, 20, 0.48);
-  backdrop-filter: blur(4px);
+  justify-self: center;
+  width: min(100%, 430px);
+  padding: 20px 40px;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  background: transparent;
+  color: #fff;
+  backdrop-filter: none;
 }
 
 .hero__card ul,
 .content-card ul {
   display: grid;
-  gap: 1rem;
+  gap: 20px;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -361,11 +388,19 @@ h3 {
 
 .hero__card li {
   display: grid;
-  grid-template-columns: 2rem 1fr;
-  gap: 0.8rem;
+  grid-template-columns: 40px 1fr;
+  gap: 10px;
   align-items: center;
-  font-size: 1rem;
-  font-weight: 900;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.hero__card svg {
+  width: 40px;
+  height: 40px;
+  fill: #f83c0f;
 }
 
 .inline-form {
@@ -399,10 +434,34 @@ h3 {
   padding: 0 1.2rem;
 }
 
-.form-note {
-  margin-top: 0.5rem;
-  color: rgba(255, 255, 255, 0.74);
-  font-size: 0.85rem;
+.hero .inline-form {
+  grid-template-columns: 60% 40%;
+  gap: 0;
+  margin-inline: -5px;
+}
+
+.hero .inline-form input,
+.hero .inline-form button {
+  border-radius: 0;
+  padding: 8px 12px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+}
+
+.hero .inline-form button {
+  background: #f83c0f;
+}
+
+.hero__mobile-call {
+  display: none;
+  width: 100%;
+  padding: 15px;
+  background: #f83c0f;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
 }
 
 .section {
@@ -880,34 +939,35 @@ h3 {
   }
 
   .hero__inner {
+    grid-template-columns: 1fr;
     min-height: auto;
-    padding: 1.2rem 0 1.6rem;
+    padding: 18px 0;
     gap: 1rem;
   }
 
   .hero__content {
-    display: grid;
-    gap: 0.6rem;
+    min-height: auto;
+    text-align: center;
   }
 
-  .hero__eyebrow {
-    margin-bottom: 0;
+  .hero__content h1 {
+    max-width: 100%;
+    margin-bottom: 14px;
+    font-size: 25px;
+    text-align: center;
   }
 
-  .hero__lead {
+  .hero__content h3,
+  .hero .inline-form {
     display: none;
   }
 
+  .hero__mobile-call {
+    display: block;
+  }
+
   .hero__card li {
-    font-size: 1rem;
-  }
-
-  .inline-form {
-    grid-template-columns: 1fr;
-  }
-
-  .inline-form button {
-    min-height: 48px;
+    font-size: 16px;
   }
 
   .cards--popular,
