@@ -980,47 +980,148 @@ h3 {
 
 .site-footer {
   background: var(--brand-blue);
-  color: #0f2531;
-  padding: 2.4rem 0 1rem;
+  color: #000;
+  font-family: Montserrat, sans-serif;
+  padding: 0;
 }
 
-.site-footer__grid {
+.site-footer__menus .container,
+.site-footer__legal .container {
+  width: min(100%, var(--container));
+}
+
+.site-footer__menus-inner {
   display: grid;
-  grid-template-columns: 1.3fr repeat(4, 1fr);
-  gap: 1.4rem;
+  grid-template-columns: 25% 25% 20% 30%;
+  gap: 0;
+  padding: 10px 0 48px;
 }
 
-.site-footer__brand {
-  font-size: 1.2rem;
-  font-weight: 900;
+.site-footer__column,
+.site-footer__contacts {
+  min-width: 0;
+  padding: 10px;
 }
 
-.site-footer h2 {
-  font-size: 1rem;
+.site-footer__column h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0 0 25px;
+  text-transform: uppercase;
 }
 
-.site-footer a,
-.site-footer span {
-  display: block;
-  margin-bottom: 0.35rem;
+.site-footer__menu,
+.site-footer__contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.site-footer__muted {
-  color: rgba(15, 37, 49, 0.7);
+.site-footer__item {
+  margin-bottom: 5px;
 }
 
-.site-footer__bottom {
+.site-footer__link {
+  color: #000;
+  display: inline;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: underline;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.site-footer__link:hover,
+.site-footer__link:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-footer__contacts {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-top: 2rem;
-  font-size: 0.85rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
 }
 
-.site-footer__bottom nav {
+.site-footer__phone {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.8em;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.site-footer__call {
+  display: inline-block;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  background: transparent;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  margin-top: 25px;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.5s ease, border-color 0.5s ease, color 0.5s ease;
+}
+
+.site-footer__call:hover,
+.site-footer__call:focus {
+  border-color: var(--brand-orange);
+  background: var(--brand-orange);
+  color: #fff;
+}
+
+.site-footer__contact-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.site-footer__contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.site-footer__contact-list svg {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  fill: #fff;
+}
+
+.site-footer__contact-list a,
+.site-footer__contact-list span {
+  color: #000;
+  text-decoration: none;
+}
+
+.site-footer__legal-inner {
+  padding: 0 0 16px;
+}
+
+.site-footer__divider {
+  border-top: 1px solid #000;
+  width: 100%;
+}
+
+.site-footer__legal p {
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  margin: 22px 0 0;
 }
 
 .floating-buttons {
@@ -1103,7 +1204,7 @@ h3 {
   .advantages,
   .contacts-preview__grid,
   .service-list,
-  .site-footer__grid {
+  .site-footer__menus-inner {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -1155,8 +1256,9 @@ h3 {
   .contacts-preview__grid,
   .steps,
   .service-list,
-  .site-footer__grid {
+  .site-footer__menus-inner {
     grid-template-columns: 1fr;
+    padding-bottom: 30px;
   }
 
   .service-list__item {
@@ -1177,7 +1279,7 @@ h3 {
     bottom: 14px;
   }
 
-  .site-footer__bottom {
-    display: grid;
+  .site-footer__legal p {
+    line-height: 1.4;
   }
 }

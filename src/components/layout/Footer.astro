@@ -1,38 +1,79 @@
 ---
-import { nav } from "../../data/nav";
 import { site } from "../../data/site";
-import { serviceGroups } from "../../data/services";
 import Container from "../ui/Container.astro";
+
+const footerGroups = [
+  {
+    title: "ПРОЧИСТКА",
+    links: [
+      { label: "Прочистка канализации", href: "/prochistka-kanalizaczii/" },
+      { label: "Гидродинамическая прочистка", href: "/gidrodinamicheskaya-ochistka-kanalizaczii/" },
+      { label: "Электромеханическая прочистка", href: "/elektromehanicheskaya-prochistka-kanalizaczii/" },
+      { label: "Прочистка унитаза", href: "/prochistka-unitaza/" },
+    ],
+  },
+  {
+    title: "САНТЕХНИКА",
+    links: [
+      { label: "Установка ванны", href: "/ustanovka-vanny/" },
+      { label: "Установка раковины", href: "/ustanovka-rakoviny/" },
+      { label: "Установка смесителя", href: "/ustanovka-smesitelya/" },
+      { label: "Установка унитаза", href: "/ustanovka-unitaza/" },
+      { label: "Установка душевой кабины", href: "/ustanovka-dushevoj-kabiny/" },
+    ],
+  },
+  {
+    title: "ТРУБЫ",
+    links: [
+      { label: "Замена труб", href: "/zamena-trub/" },
+      { label: "Замена труб канализации", href: "/zamena-kanalizaczionnyh-trub/" },
+      { label: "Замена стояков", href: "/zamena-stoyakov/" },
+    ],
+  },
+];
 ---
 
 <footer class="site-footer">
-  <Container class="site-footer__grid">
-    <div>
-      <a class="site-footer__brand" href="/">{site.name}</a>
-      <p>{site.description}</p>
-      <p class="site-footer__muted">Данные о реквизитах и юридическом лице: TODO.</p>
-    </div>
-    {serviceGroups.map((group) => (
-      <div>
-        <h2>{group.title}</h2>
-        {group.services.slice(0, 5).map((service) => (
-          <a href={`/${service.slug}/`}>{service.title}</a>
-        ))}
-      </div>
-    ))}
-    <div>
-      <h2>Контакты</h2>
-      <a href={site.phoneHref}>{site.phone}</a>
-      <a href={`mailto:${site.email}`}>{site.email}</a>
-      <span>{site.address}</span>
-      <span>{site.workingHours}</span>
-    </div>
-  </Container>
-  <Container class="site-footer__bottom">
-    <span>Copyright © {new Date().getFullYear()}. Все права защищены.</span>
-    <nav aria-label="Дополнительные ссылки">
-      <a href="/politika-konfidenczialnosti/">Политика конфиденциальности</a>
-      {nav.map((item) => <a href={item.href}>{item.label}</a>)}
-    </nav>
-  </Container>
+  <div class="site-footer__menus">
+    <Container class="site-footer__menus-inner">
+      {footerGroups.map((group) => (
+        <section class="site-footer__column" aria-label={group.title}>
+          <h2>{group.title}</h2>
+          <ul class="site-footer__menu">
+            {group.links.map((link) => (
+              <li class="site-footer__item">
+                <a class="site-footer__link" href={link.href}>{link.label}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+
+      <section class="site-footer__contacts" aria-label="Контакты">
+        <a class="site-footer__phone" href={site.phoneHref}>{site.phone}</a>
+        <a class="site-footer__call" href={site.phoneHref}>Позвоните нам</a>
+        <ul class="site-footer__contact-list">
+          <li>
+            <svg viewBox="0 0 512 512" aria-hidden="true">
+              <path d="M502.3 190.8 327.4 338.6c-18.9 15.9-46 15.9-64.9 0L9.7 190.8C3.7 185.7 0 178.2 0 170.3V120c0-26.5 21.5-48 48-48h416c26.5 0 48 21.5 48 48v50.3c0 7.9-3.7 15.4-9.7 20.5zM0 218.4l242 204.6c8.1 6.8 19.9 6.8 28 0l242-204.6V392c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V218.4z"></path>
+            </svg>
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 576 512" aria-hidden="true">
+              <path d="M288 0 160 48 32 0C14.3-6.6 0 6.5 0 25.4v398.8c0 13.5 8.5 25.5 21.2 30.1L160 512l128-48 128 48 138.8-57.7c12.7-4.6 21.2-16.6 21.2-30.1V25.4C576 6.5 561.7-6.6 544 0L416 48 288 0zm-96 92.3 64-24v351.4l-64 24V92.3zm128-24 64 24v351.4l-64-24V68.3z"></path>
+            </svg>
+            <span>{site.address}</span>
+          </li>
+        </ul>
+      </section>
+    </Container>
+  </div>
+
+  <div class="site-footer__legal">
+    <Container class="site-footer__legal-inner">
+      <div class="site-footer__divider" aria-hidden="true"></div>
+      <p>Copyright © {new Date().getFullYear()} г. Все права защищены</p>
+    </Container>
+  </div>
 </footer>
