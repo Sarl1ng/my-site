@@ -25,7 +25,9 @@ function isActive(item: NavItem) {
         <img src={site.logo.src} alt={site.logo.alt} width="150" height="95" loading="eager" />
       </a>
       <p class="site-header__tagline">{site.tagline}</p>
-      <a class="site-header__call" href={site.phoneHref}>Позвоните<br />нам</a>
+      <div class="site-header__call-wrap">
+        <a class="site-header__call" href={site.phoneHref}>Позвоните<br />нам</a>
+      </div>
       <div class="site-header__contacts">
         <div class="site-header__phone">
           <div class="site-header__phone-line">
