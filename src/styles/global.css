@@ -130,6 +130,10 @@ h3 {
   top: 0;
   z-index: 40;
   background: #fff;
+}
+
+.site-header__top {
+  background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -189,9 +193,7 @@ h3 {
 }
 
 .site-header__call {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
   border: 2px solid var(--brand-orange);
   border-radius: 15px;
   background: #fff;
@@ -199,7 +201,7 @@ h3 {
   font-family: Montserrat, sans-serif;
   font-size: 15px;
   font-weight: 500;
-  line-height: 1.05;
+  line-height: 1;
   padding: 12px 24px;
   text-align: center;
   text-decoration: none;
@@ -221,9 +223,11 @@ h3 {
 }
 
 .site-header__phone {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
-  justify-items: center;
 }
 
 .site-header__phone-line {
@@ -231,6 +235,7 @@ h3 {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  padding: 10px;
 }
 
 .site-header__phone-line svg {
@@ -256,10 +261,12 @@ h3 {
 
 .site-header__phone span {
   color: #000;
+  display: block;
   font-family: Montserrat, sans-serif;
   font-size: 17px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1;
+  margin: 0;
   text-align: center;
 }
 
@@ -273,7 +280,9 @@ h3 {
 
 .desktop-nav {
   display: flex;
+  align-items: stretch;
   justify-content: center;
+  width: 100%;
 }
 
 .desktop-nav__item {
@@ -284,7 +293,7 @@ h3 {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 15px 50px;
+  padding: 13px 50px;
   color: #000;
   fill: #000;
   font-family: Montserrat, sans-serif;
