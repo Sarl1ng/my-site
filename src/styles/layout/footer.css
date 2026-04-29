@@ -1,0 +1,178 @@
+.site-footer {
+  background: var(--brand-blue);
+  color: #000;
+  font-family: Montserrat, sans-serif;
+  padding: 0;
+}
+
+.site-footer__menus .container,
+.site-footer__legal .container {
+  width: min(100%, var(--container));
+}
+
+.site-footer__menus-inner {
+  display: grid;
+  grid-template-columns: 25% 25% 20% 30%;
+  gap: 0;
+  padding: 10px 0 48px;
+}
+
+.site-footer__column,
+.site-footer__contacts {
+  min-width: 0;
+  padding: 10px;
+}
+
+.site-footer__column h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0 0 25px;
+  text-transform: uppercase;
+}
+
+.site-footer__menu,
+.site-footer__contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer__item {
+  margin-bottom: 5px;
+}
+
+.site-footer__link {
+  color: #000;
+  display: inline;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: underline;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.site-footer__link:hover,
+.site-footer__link:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-footer__contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.site-footer__phone {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.8em;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.site-footer__call {
+  display: inline-block;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  background: transparent;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  margin-top: 25px;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.5s ease, border-color 0.5s ease, color 0.5s ease;
+}
+
+.site-footer__call:hover,
+.site-footer__call:focus {
+  border-color: var(--brand-orange);
+  background: var(--brand-orange);
+  color: #fff;
+}
+
+.site-footer__contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.site-footer__contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.site-footer__contact-list svg {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  fill: #fff;
+}
+
+.site-footer__contact-list a,
+.site-footer__contact-list span {
+  color: #000;
+  text-decoration: none;
+}
+
+.site-footer__legal-inner {
+  padding: 0 0 16px;
+}
+
+.site-footer__divider {
+  border-top: 1px solid #000;
+  width: 100%;
+}
+
+.site-footer__legal p {
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  margin: 22px 0 0;
+}
+
+.floating-buttons {
+  position: fixed;
+  right: 18px;
+  top: 45%;
+  bottom: auto;
+  z-index: 50;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.floating-buttons__item {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border: 4px solid #fff;
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.floating-buttons__item--whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+
+.floating-buttons__item--phone {
+  background: #00ff3b;
+  color: #111;
+}
+

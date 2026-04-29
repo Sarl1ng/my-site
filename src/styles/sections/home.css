@@ -1,0 +1,487 @@
+.hero-breadcrumb {
+  background: #fff;
+  color: #555;
+  font-family: Montserrat, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 10px 0;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 415px;
+  color: #fff;
+  background-position: center center;
+  background-size: cover;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: #000;
+  opacity: 0.65;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 0;
+  align-items: center;
+  min-height: 415px;
+  padding: 0;
+}
+
+.eyebrow {
+  margin-bottom: 0.6rem;
+  color: var(--brand-orange);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero__content {
+  display: flex;
+  min-height: 415px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero__content h1 {
+  max-width: 620px;
+  margin: 0 0 18px;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.hero__content h3 {
+  margin: 0 0 16px;
+  color: #f83c0f;
+  font-family: Montserrat, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.hero__actions,
+.emergency__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.hero__phone {
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.hero__card,
+.content-card,
+.price-card,
+.contacts-preview__grid article,
+.service-card,
+.steps article,
+.advantages article {
+  border: 1px solid var(--brand-line);
+  border-radius: 0;
+  background: #fff;
+  box-shadow: none;
+}
+
+.hero__card {
+  justify-self: center;
+  width: min(100%, 430px);
+  padding: 20px 40px;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  background: transparent;
+  color: #fff;
+  backdrop-filter: none;
+}
+
+.hero__card ul,
+.content-card ul {
+  display: grid;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.hero__card li {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 10px;
+  align-items: center;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.hero__card svg {
+  width: 40px;
+  height: 40px;
+  fill: #f83c0f;
+}
+
+.inline-form {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto;
+  gap: 0.65rem;
+  max-width: 560px;
+}
+
+.inline-form input,
+.lead-form input,
+.lead-form textarea {
+  width: 100%;
+  border: 1px solid var(--brand-line);
+  border-radius: 3px;
+  background: #fff;
+  padding: 0.72rem 0.9rem;
+}
+
+.inline-form button,
+.lead-form button {
+  border: 0;
+  border-radius: 3px;
+  background: var(--brand-orange);
+  color: #fff;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.inline-form button {
+  padding: 0 1.2rem;
+}
+
+.hero .inline-form {
+  grid-template-columns: 60% 40%;
+  gap: 0;
+  margin-inline: -5px;
+}
+
+.hero .inline-form input,
+.hero .inline-form button {
+  border-radius: 0;
+  padding: 8px 12px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+}
+
+.hero .inline-form button {
+  background: #f83c0f;
+}
+
+.hero__mobile-call {
+  display: none;
+  width: 100%;
+  padding: 15px;
+  background: #f83c0f;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.section {
+  padding: clamp(2rem, 5vw, 3.5rem) 0;
+}
+
+.section--white {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.section-title {
+  max-width: 790px;
+  margin: 0 auto 1.45rem;
+  text-align: center;
+}
+
+.section-title--left {
+  margin-inline: 0;
+  text-align: left;
+}
+
+.section-title p {
+  color: var(--brand-muted);
+}
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin: 0.6rem auto;
+  background: var(--brand-line);
+}
+
+.section-title::before {
+  width: 100%;
+}
+
+.section-title::after {
+  width: 82%;
+}
+
+.cards,
+.price-grid,
+.advantages,
+.steps,
+.contacts-preview__grid,
+.content-grid {
+  display: grid;
+  gap: 1.05rem;
+}
+
+.cards--popular,
+.price-grid,
+.advantages {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.service-card,
+.price-card,
+.advantages article,
+.steps article,
+.contacts-preview__grid article,
+.content-card {
+  padding: 1rem;
+}
+
+.service-card__icon,
+.service-list__item span,
+.advantages article > span {
+  display: inline-grid;
+  place-items: center;
+  min-width: 58px;
+  height: 58px;
+  border-radius: 0;
+  background: #fff7dd;
+  color: var(--brand-orange);
+  font-weight: 900;
+}
+
+.service-card--photo {
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  gap: 0.65rem;
+  min-height: 300px;
+  padding: 0.7rem;
+  text-align: center;
+}
+
+.service-card--photo img {
+  width: 100%;
+  aspect-ratio: 4 / 2.55;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.service-card--photo h3 {
+  margin: 0;
+  font-size: 0.98rem;
+  text-decoration: underline;
+}
+
+.service-card--photo p {
+  margin: 0;
+  color: var(--brand-dark);
+  font-weight: 700;
+}
+
+.service-card--photo .button {
+  min-height: 34px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.82rem;
+}
+
+.service-card a,
+.price-card a,
+.site-footer a,
+.content-card a {
+  text-decoration: none;
+}
+
+.service-card p,
+.price-card span,
+.contacts-preview__grid p,
+.content-card p,
+.steps p,
+.advantages p,
+.seo-text p {
+  color: var(--brand-muted);
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.72rem;
+  margin-top: 1.5rem;
+}
+
+.service-list__item {
+  display: grid;
+  gap: 0.7rem;
+  min-height: 138px;
+  place-items: center;
+  border: 1px solid var(--brand-line);
+  border-radius: 0;
+  background: #fff;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.steps {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.steps article {
+  position: relative;
+  min-height: 310px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.steps span {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.65rem;
+  color: var(--brand-orange);
+  font-size: 2.3rem;
+  font-weight: 900;
+}
+
+.steps img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--brand-line);
+}
+
+.steps h3,
+.steps p {
+  padding-inline: 1rem;
+}
+
+.steps h3 {
+  margin-top: 1rem;
+}
+
+.emergency {
+  padding: 2.5rem 0;
+  color: #fff;
+  background:
+    linear-gradient(120deg, rgba(16, 31, 52, 0.96), rgba(16, 31, 52, 0.76)),
+    url("/assets/img/hero.webp") center/cover;
+}
+
+.emergency__inner {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 520px);
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.emergency__form {
+  align-self: center;
+}
+
+.emergency__form p {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.78rem;
+}
+
+.lead-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.lead-form {
+  display: grid;
+  gap: 1rem;
+  border: 1px solid var(--brand-line);
+  border-radius: 0;
+  background: #fff;
+  padding: 1.4rem;
+  box-shadow: var(--shadow);
+}
+
+.lead-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 800;
+}
+
+.lead-form button {
+  min-height: 52px;
+}
+
+.lead-form p {
+  margin: 0;
+  color: var(--brand-muted);
+  font-size: 0.85rem;
+}
+
+.faq {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.faq details {
+  border-radius: 0;
+  background: var(--brand-orange);
+  color: #fff;
+  overflow: hidden;
+}
+
+.faq summary {
+  padding: 1rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.faq p {
+  margin: 0;
+  padding: 0 1rem 1rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.contacts-preview__grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.section-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.6rem;
+}
+
+.seo-text {
+  background: #fff;
+}
+
+.seo-text .container {
+  max-width: 920px;
+}
+
