@@ -29,12 +29,19 @@
     display: block;
   }
 
+  .mobile-nav,
+  .mobile-nav nav,
+  .site-header__top,
+  .site-header__nav {
+    max-width: 100vw;
+  }
+
   .hero__inner,
   .lead-section,
   .service-hero__grid,
   .content-grid,
   .emergency__inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .emergency__inner {
@@ -61,7 +68,7 @@
   }
 
   .hero__inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     min-height: auto;
     padding: 18px 0;
     gap: 1rem;
@@ -70,6 +77,16 @@
   .hero__content {
     min-height: auto;
     text-align: center;
+  }
+
+  .hero__content,
+  .hero__card,
+  .service-card,
+  .service-list__item,
+  .site-footer__column,
+  .site-footer__contacts {
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 
   .hero__content h1 {
@@ -99,7 +116,7 @@
   .steps,
   .service-list,
   .site-footer__menus-inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     padding-bottom: 30px;
   }
 
