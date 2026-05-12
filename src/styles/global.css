@@ -1,71 +1,7 @@
-@import "tailwindcss";
-
-/* Токены под референс */
-:root{
-  --brand-blue: #6EC1E4;   /* navbar */
-  --brand-orange: #F83C0F; /* акцент/active/кнопки */
-  --text: #111111;
-  --muted: #666666;
-  --bg: #f4f6f8;
-  --container: 1140px;
-}
-
-@layer base {
-  *, *::before, *::after { box-sizing: border-box; }
-  html, body { height: 100%; }
-
-  body {
-    margin: 0;
-    font-family: Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    color: var(--text);
-    background: var(--bg);
-  }
-
-  img { max-width: 100%; display: block; }
-  a { color: inherit; }
-}
-
-@layer components {
-  .site-container {
-    width: min(var(--container), 100% - 32px);
-    margin-inline: auto;
-  }
-
-  .section { @apply py-12 md:py-16; }
-
-  .h1 { @apply font-extrabold leading-[1.05] text-[clamp(28px,4vw,52px)] m-0; }
-  .h2 { @apply font-extrabold leading-[1.1] text-[clamp(22px,3vw,36px)] m-0; }
-
-  .text-muted { color: var(--muted); }
-
-  .card { @apply bg-white rounded-2xl shadow-lg; }
-
-  /* Buttons: базовый + варианты (важно: @apply только утилиты) */
-  .btn {
-    @apply inline-flex items-center justify-center gap-2
-           select-none cursor-pointer no-underline
-           font-bold
-           px-6 py-3
-           transition-all duration-300 ease-in-out;
-  }
-
-  .btn-primary {
-    @apply text-white;
-    background: var(--brand-orange);
-  }
-
-  .btn-outline {
-    @apply bg-white;
-    color: var(--brand-orange);
-    border: 2px solid var(--brand-orange);
-    border-radius: 15px; /* как в референсе кнопки */
-  }
-
-  .btn-outline:hover {
-    background: var(--brand-orange);
-    color: #fff;
-  }
-
-  .nav-blue { background: var(--brand-blue); }
-  .nav-active { background: var(--brand-orange); }
-}
+@import "./base.css";
+@import "./ui.css";
+@import "./layout/header.css";
+@import "./sections/home.css";
+@import "./pages/service.css";
+@import "./layout/footer.css";
+@import "./responsive.css";

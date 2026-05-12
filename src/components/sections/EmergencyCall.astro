@@ -1,0 +1,24 @@
+---
+import { site } from "../../data/site";
+import Button from "../ui/Button.astro";
+import Container from "../ui/Container.astro";
+---
+
+<section class="emergency">
+  <Container class="emergency__inner">
+    <div>
+      <p class="eyebrow">Перезвоним в течение минуты</p>
+      <h2>Оставьте заявку, и мы устраним неисправность уже сегодня</h2>
+      <p>Темный CTA-блок повторяет коммерческую логику старого сайта: короткий текст, поле телефона и заметная кнопка вызова мастера.</p>
+    </div>
+    <form class="inline-form emergency__form" action="#" method="post">
+      <label class="sr-only" for="emergency-phone">Телефон</label>
+      <input id="emergency-phone" name="phone" type="tel" placeholder="Введите ваш телефон" autocomplete="tel" />
+      <button type="submit">Вызвать мастера</button>
+      <p>Нажимая кнопку, клиент принимает условия обработки данных. TODO: добавить финальный текст.</p>
+    </form>
+    <div class="emergency__actions">
+      <Button href={site.phoneHref} variant="light">Позвонить {site.phone}</Button>
+    </div>
+  </Container>
+</section>

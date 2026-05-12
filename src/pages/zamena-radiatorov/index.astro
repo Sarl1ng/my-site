@@ -1,10 +1,7 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-const title = "Страница";
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import { getServiceBySlug } from "../../data/services";
+const service = getServiceBySlug("zamena-radiatorov");
+if (!service) throw new Error("Service not found");
 ---
-<BaseLayout title={title}>
-  <main class="site-container py-10">
-    <h1 class="text-3xl font-extrabold">{title}</h1>
-    <p class="mt-3 text-slate-700">Заглушка. Заполним контентом.</p>
-  </main>
-</BaseLayout>
+<ServiceLayout service={service} />

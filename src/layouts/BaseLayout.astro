@@ -1,10 +1,27 @@
 ---
 import "../styles/global.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import FloatingButtons from "../components/FloatingButtons.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+import FloatingButtons from "../components/layout/FloatingButtons.astro";
+import { site } from "../data/site";
 
-const { title = "Сервис PRO" } = Astro.props;
+type Props = {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogType?: "website" | "article";
+  noindex?: boolean;
+};
+
+const {
+  title,
+  description,
+  canonical = Astro.url.pathname,
+  ogType = "website",
+  noindex = false,
+} = Astro.props;
+
+const canonicalUrl = new URL(canonical, site.baseUrl).toString();
 const activePath = Astro.url.pathname;
 ---
 
@@ -13,19 +30,28 @@ const activePath = Astro.url.pathname;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <title>{title}</title>
-
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content={site.name} />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
-
-  <body class="min-h-screen flex flex-col">
+  <body>
     <Header activePath={activePath} />
-    <main class="flex-1">
+    <main>
       <slot />
     </main>
     <Footer />

@@ -1,0 +1,36 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.62rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button--primary {
+  background: var(--brand-orange);
+  color: #fff;
+  box-shadow: none;
+}
+
+.button--outline {
+  border-color: var(--brand-orange);
+  background: #fff;
+  color: var(--brand-orange);
+  border-radius: 13px;
+}
+
+.button--light {
+  background: #fff;
+  color: var(--brand-dark);
+}
+

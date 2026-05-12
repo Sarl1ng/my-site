@@ -1,0 +1,27 @@
+---
+import Container from "../ui/Container.astro";
+import SectionTitle from "../ui/SectionTitle.astro";
+
+const steps = [
+  ["Заявка", "Оставьте заявку на сайте или позвоните по номеру телефона.", "/images/home/zayavka.jpg"],
+  ["Выезд мастера", "К выбранному времени приезжает мастер и осматривает задачу.", "/assets/img/hero.webp"],
+  ["Проведение работ", "После согласования мастер выполняет прочистку или сантехнические работы.", "/images/home/vypolnenie-rabot.jpg"],
+  ["Прием работ", "Клиент принимает результат и получает рекомендации по эксплуатации.", "/images/home/gostinicy.jpg"],
+];
+---
+
+<section class="section">
+  <Container>
+    <SectionTitle title="Как проходит наша работа в Краснодарском крае" />
+    <div class="steps">
+      {steps.map(([title, text, image], index) => (
+        <article>
+          <img src={image} alt={title} loading="lazy" width="300" height="200" />
+          <span>{index + 1}</span>
+          <h3>{title}</h3>
+          <p>{text}</p>
+        </article>
+      ))}
+    </div>
+  </Container>
+</section>

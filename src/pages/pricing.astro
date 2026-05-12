@@ -2,9 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Цены" description="Пакеты и стоимость.">
-  <h1 class="text-3xl font-semibold tracking-tight">Цены</h1>
-  <p class="text-zinc-700 pt-3 max-w-2xl">
-    Сюда добавим карточки пакетов (Basic/Pro/Enterprise или как у тебя на WP).
-  </p>
+<BaseLayout
+  title="Цены | PRO Сервис"
+  description="Legacy-страница /pricing сохранена для навигации и указывает на основной SEO URL /czeny/."
+  canonical="/czeny/"
+  noindex={true}
+>
+  <section class="legacy-redirect">
+    <h1>Цены</h1>
+    <p>Эта legacy-страница сохранена временно. Основной SEO URL: <a href="/czeny/">/czeny/</a>.</p>
+  </section>
 </BaseLayout>

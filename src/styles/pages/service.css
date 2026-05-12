@@ -1,0 +1,61 @@
+.page-head,
+.service-hero {
+  padding: 2rem 0 3rem;
+}
+
+.page-head p,
+.service-hero p {
+  max-width: 760px;
+  color: var(--brand-muted);
+  font-size: 1.08rem;
+}
+
+.breadcrumbs {
+  margin-bottom: 1rem;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0;
+  margin: 0;
+  color: var(--brand-muted);
+  font-size: 0.9rem;
+  list-style: none;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  content: "/";
+  margin-left: 0.45rem;
+}
+
+.service-hero__grid,
+.content-grid {
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+}
+
+.service-hero aside {
+  border-radius: 24px;
+  background: #fff;
+  padding: 1.4rem;
+  box-shadow: var(--shadow);
+}
+
+.service-hero li {
+  margin-bottom: 0.6rem;
+}
+
+.cta-card {
+  background: #111827;
+  color: #fff;
+}
+
+.legacy-redirect {
+  display: grid;
+  place-items: center;
+  min-height: 40vh;
+  padding: 2rem;
+  text-align: center;
+}
+

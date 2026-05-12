@@ -1,10 +1,18 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-const title = "Страница";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/ui/Breadcrumbs.astro";
+import Container from "../../components/ui/Container.astro";
 ---
-<BaseLayout title={title}>
-  <main class="site-container py-10">
-    <h1 class="text-3xl font-extrabold">{title}</h1>
-    <p class="mt-3 text-slate-700">Заглушка. Заполним контентом.</p>
-  </main>
+
+<BaseLayout
+  title="Политика конфиденциальности | PRO Сервис"
+  description="Черновик политики конфиденциальности для сайта услуг. Текст требует юридической проверки владельцем сайта."
+  canonical="/politika-konfidenczialnosti/"
+  noindex={true}
+>
+  <Container class="page-head">
+    <Breadcrumbs items={[{ label: "Политика конфиденциальности" }]} />
+    <h1>Политика конфиденциальности</h1>
+    <p>TODO: заменить на юридически проверенный текст владельца сайта.</p>
+  </Container>
 </BaseLayout>

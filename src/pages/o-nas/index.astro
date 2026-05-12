@@ -1,10 +1,44 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-const title = "Страница";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/ui/Breadcrumbs.astro";
+import Container from "../../components/ui/Container.astro";
+import LeadForm from "../../components/sections/LeadForm.astro";
+import { site } from "../../data/site";
 ---
-<BaseLayout title={title}>
-  <main class="site-container py-10">
-    <h1 class="text-3xl font-extrabold">{title}</h1>
-    <p class="mt-3 text-slate-700">Заглушка. Заполним контентом.</p>
-  </main>
+
+<BaseLayout
+  title="О нас | PRO Сервис"
+  description="Информация о PRO Сервис: прочистка канализации, сантехнические работы и аварийный вызов мастера в Новороссийске."
+  canonical="/o-nas/"
+>
+  <Container class="page-head">
+    <Breadcrumbs items={[{ label: "О нас" }]} />
+    <h1>О нас</h1>
+    <p>
+      Старый сайт описывает компанию как сервис по прочистке канализации и сантехническим работам в Новороссийске.
+      Подробные юридические данные, опыт, сертификаты и гарантии нужно подтвердить у владельца.
+    </p>
+  </Container>
+
+  <section class="section section--white">
+    <Container class="content-grid">
+      <article class="content-card">
+        <h2>Что уже известно</h2>
+        <ul>
+          <li>Регион: {site.region}</li>
+          <li>Телефон: {site.phone}</li>
+          <li>Почта: {site.email}</li>
+          <li>Адрес со старого сайта: {site.address}</li>
+        </ul>
+      </article>
+      <article class="content-card">
+        <h2>Что нужно подтвердить</h2>
+        <ul>
+          {site.todos.map((todo) => <li>{todo}</li>)}
+        </ul>
+      </article>
+    </Container>
+  </section>
+
+  <LeadForm />
 </BaseLayout>

@@ -8,14 +8,17 @@ export const nav: NavItem[] = [
   { label: "О нас", href: "/o-nas/" },
   {
     label: "Услуги",
-    href: "/uslugi/",
+    href: "/prochistka-kanalizaczii/",
     children: [
       {
         label: "Устранение засоров",
         href: "/ustranenie-zasorov/",
         children: [
           { label: "Прочистка канализации", href: "/prochistka-kanalizaczii/" },
-          { label: "Гидродинамическая прочистка канализации в Краснодарском крае", href: "/gidrodinamicheskaya-ochistka-kanalizaczii/" },
+          {
+            label: "Гидродинамическая прочистка канализации в Краснодарском крае",
+            href: "/gidrodinamicheskaya-ochistka-kanalizaczii/",
+          },
           { label: "Механическая прочистка канализации", href: "/mehanicheskaya-prochistka-kanalizaczii/" },
           { label: "Прочистка ливневой канализации", href: "/prochistka-livnevoj-kanalizaczii/" },
           { label: "Электромеханическая прочистка канализации", href: "/elektromehanicheskaya-prochistka-kanalizaczii/" },
@@ -49,4 +52,5 @@ export const nav: NavItem[] = [
     ],
   },
   { label: "Цены", href: "/czeny/" },
+  { label: "Контакты", href: "/kontakty/" },
 ];

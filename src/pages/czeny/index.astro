@@ -1,10 +1,40 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-const title = "Страница";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/ui/Breadcrumbs.astro";
+import Container from "../../components/ui/Container.astro";
+import LeadForm from "../../components/sections/LeadForm.astro";
+import { priceCategories } from "../../data/prices";
 ---
-<BaseLayout title={title}>
-  <main class="site-container py-10">
-    <h1 class="text-3xl font-extrabold">{title}</h1>
-    <p class="mt-3 text-slate-700">Заглушка. Заполним контентом.</p>
-  </main>
+
+<BaseLayout
+  title="Цены на прочистку канализации и сантехнические работы | PRO Сервис"
+  description="Стартовые цены на популярные услуги прочистки и сантехники в Новороссийске. Точные цены требуют подтверждения владельцем сайта."
+  canonical="/czeny/"
+>
+  <Container class="page-head">
+    <Breadcrumbs items={[{ label: "Цены" }]} />
+    <h1>Цены</h1>
+    <p>На странице оставлены только данные, найденные на старом сайте. Неподтвержденные позиции помечены как TODO.</p>
+  </Container>
+
+  <section class="section section--white">
+    <Container>
+      {priceCategories.map((category) => (
+        <div class="price-section">
+          <h2>{category.title}</h2>
+          <div class="price-grid">
+            {category.items.map((item) => (
+              <article class="price-card">
+                <h3>{item.href ? <a href={item.href}>{item.title}</a> : item.title}</h3>
+                <p>{item.price}</p>
+                <span>{item.source === "old-site" ? "Источник: старый сайт" : "TODO: уточнить"}</span>
+              </article>
+            ))}
+          </div>
+        </div>
+      ))}
+    </Container>
+  </section>
+
+  <LeadForm />
 </BaseLayout>
